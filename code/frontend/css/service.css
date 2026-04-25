@@ -1,0 +1,207 @@
+:root {
+    --header-bg : #639871;
+    --hero-bg : #579066;
+    --button-bg : #014F31;
+    --button-hover: #023d26;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+button {
+    background-color: var(--button-bg);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+button a {
+    color: #C8E6C9;
+    text-decoration: none;
+    padding: 5px 4px 0px ;
+}
+
+/* Style pour les liens en tant que boutons */
+.btn {
+    display: inline-block;
+    background-color: var(--button-bg);
+    padding: 12px 28px;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    border: 2px solid var(--button-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+header {
+   background-color: var(--header-bg);
+    color: white;
+    padding: 20px 40px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+header .logo h1 {
+    /* margin: 0; */
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.logo img {
+    margin-right: 0;
+    transition: transform 0.3s;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+.navi ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    color: white;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.navi ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+.navi ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #C8E6C9;
+    transition: width 0.3s ease;
+}
+.navi ul li a:hover::after{
+    width: 100%;
+}
+.navi ul li a:hover{
+    color: #C8E6C9;
+}
+main {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    min-height: calc(100vh - 200px);
+    margin: 0;
+}
+h2 {
+    font-size: 2em;
+    margin-top: auto;
+    font-weight: bold;
+}
+.princ {
+    margin-left: 45px;
+    margin-right: 45px;
+}
+/* Section services avec articles (cartes) */
+.services {
+    margin-bottom: 50px;
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+}
+
+.service {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service:hover img {
+    transform: scale(1.05);
+}
+
+.service h2 {
+    margin: 15px 0 10px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--hero-bg);
+}
+
+.service p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
