@@ -69,7 +69,7 @@ button a {
 header {
    background-color: var(--header-bg);
     color: white;
-    padding: 20px 40px; 
+    padding: 20px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -88,7 +88,6 @@ header .logo {
     flex-shrink: 0;
 }
 header .logo h1 {
-    /* margin: 0; */
     font-size: 1.5em;
     font-weight: 700;
 }
@@ -134,74 +133,135 @@ header .logo h1 {
 .navi ul li a:hover{
     color: #C8E6C9;
 }
-main {
+main.page-services {
     padding: 40px 20px;
     background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
     min-height: calc(100vh - 200px);
     margin: 0;
 }
-h2 {
+.page-services h2 {
     font-size: 2em;
-    margin-top: auto;
+    margin-top: 0;
+    margin-bottom: 0.5em;
     font-weight: bold;
 }
+
 .princ {
     margin-left: 45px;
     margin-right: 45px;
 }
-/* Section services avec articles (cartes) */
-.services {
-    margin-bottom: 50px;
-    background: transparent;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 0;
+
+.sep {
+    margin-bottom: 48px;
 }
 
-.service {
-    flex: 1;
-    min-width: 280px;
+.services-intro {
+    text-align: left;
+    max-width: 56rem;
+    margin-bottom: 1.75rem;
+    color: #37474f;
+    line-height: 1.65;
+}
+
+.services-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--hero-bg);
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid rgba(87, 144, 102, 0.35);
+}
+
+/* Grille de cartes — page Services uniquement */
+.page-services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: clamp(20px, 3vw, 32px);
+    align-items: stretch;
+}
+
+.page-services .service-card {
     display: flex;
     flex-direction: column;
     text-align: center;
     background: white;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 0;
+    border-radius: 14px;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.service:hover {
+.page-services .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
-.service img {
+/* Zone image : ratio uniforme, pas de déformation */
+.page-services .service-card__media {
+    position: relative;
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: linear-gradient(145deg, #e0ebe3 0%, #cfd8dc 100%);
+}
+
+.page-services .service-card__media img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    object-position: center;
+    display: block;
+    transition: transform 0.45s ease;
 }
 
-.service:hover img {
-    transform: scale(1.05);
+.page-services .service-card:hover .service-card__media img {
+    transform: scale(1.06);
 }
 
-.service h2 {
-    margin: 15px 0 10px;
+.page-services .service-card > h2 {
+    margin: 18px 24px 10px;
     font-size: 1.3em;
     font-weight: 700;
     color: var(--hero-bg);
 }
 
-.service p {
+.page-services .service-card > p {
     flex-grow: 1;
-    margin-bottom: 20px;
+    margin: 0 24px 20px;
     color: #555;
     line-height: 1.6;
     font-size: 0.95em;
+}
+
+.page-services .service-card > .btn {
+    align-self: center;
+    margin: 0 24px 24px;
+}
+
+@media (max-width: 768px) {
+    .princ {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    main.page-services {
+        padding: 28px 14px;
+    }
+
+    .page-services h2 {
+        font-size: 1.65em;
+    }
+}
+
+@media (max-width: 480px) {
+    .princ {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .page-services .service-card__media {
+        aspect-ratio: 16 / 10;
+    }
 }
